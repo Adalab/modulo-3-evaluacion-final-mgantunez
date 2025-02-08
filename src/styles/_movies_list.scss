@@ -5,7 +5,9 @@
         flex-wrap: wrap;
         gap: 2rem;
         justify-content: center;
-        margin: 2rem;
+        margin-top: 5rem;
+        margin-left: 10rem;
+        margin-right: 10rem;
     }
 
     &__item {
@@ -17,6 +19,12 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+        height: 600px;
+
         &:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -25,30 +33,27 @@
 
     &__img {
         width: 100%;
-        height: 150px;
+        height: 350px;
         object-fit: cover;
+        border-radius: 8px;
     }
 
     &__title {
         font-weight: bold;
         font-size: 1.5rem;
         color: #2c3e50;
-        padding: 1rem;
         text-align: center;
     }
 
     &__sentence {
         font-size: 1rem;
         color: #7f8c8d;
-        padding: 0 1rem;
         text-align: center;
     }
 
     &__year {
         font-size: 1.2rem;
         color: #7f8c8d;
-        padding: 0 1rem;
         text-align: center;
-
     }
 }
