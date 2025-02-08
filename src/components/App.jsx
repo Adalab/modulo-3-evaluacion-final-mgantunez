@@ -17,19 +17,30 @@ function App() {
   const [filterYear, setFilterYear] = useState('');
 
   useEffect(() => {
-    fetch('https://owen-wilson-wow-api.onrender.com/wows/random?results=50')
+
+    let url = 'https://owen-wilson-wow-api.onrender.com/wows/random?results=50';
+
+    if (filterMovie) {
+      url += `&movie=${encodeURIComponent(filterMovie)}`;
+    }
+    if (filterYear) {
+      url += `&year=${encodeURIComponent(filterYear)}`;
+    }
+
+    fetch(url)
       .then(response => response.json())
       .then(dataJson => {
         setMovies(dataJson);
       });
-  }, []);
+  },
+    [filterMovie, filterYear]);
 
 
   // Filtro por nombre
 
   const handleInputFilterMovie = (ev) => {
     ev.preventDefault();
-    setFilterMovie(ev.target.value);
+    setFilterMovie(ev.target.value.toLocaleLowerCase());
 
   }
 

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 function Form({ handleInputFilterMovie, filterMovie, filterYear, handleSelectFilterYear, finalYear }) {
 
     return (
+
         <form>
+
 
             {/*Filtro por nombre de película*/}
             <input
