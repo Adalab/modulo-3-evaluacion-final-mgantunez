@@ -5,15 +5,17 @@ import Footer from './Footer';
 
 import '../styles/App.scss';
 import '../styles/_header.scss';
-import '../styles/_movies_list.scss';
 import '../styles/_form.scss';
+import '../styles/_movies_list.scss';
 import '../styles/_footer.scss';
 import LandingPage from './pages/LandingPage';
 import MovieSceneDetail from './pages/MovieSceneDetail';
 import { Route, Routes } from 'react-router';
+import { useLocation } from 'react-router';
 
 function App() {
 
+  const location = useLocation();
   const [movies, setMovies] = useState([]);
   const [filterMovie, setFilterMovie] = useState('');
   const [filterYear, setFilterYear] = useState('');
@@ -77,14 +79,16 @@ function App() {
 
       <main>
 
-        <Form
-          handleInputFilterMovie={handleInputFilterMovie}
-          filterMovie={filterMovie}
-          filterYear={filterYear}
-          handleSelectFilterYear={handleSelectFilterYear}
-          finalYear={finalYear}
+        {location.pathname === '/' && (
+          <Form
+            handleInputFilterMovie={handleInputFilterMovie}
+            filterMovie={filterMovie}
+            filterYear={filterYear}
+            handleSelectFilterYear={handleSelectFilterYear}
+            finalYear={finalYear}
 
-        />
+          />
+        )}
 
         <Routes>
           <Route index element={<LandingPage movies={filteredMovies} />}></Route>

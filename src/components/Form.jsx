@@ -4,34 +4,38 @@ function Form({ handleInputFilterMovie, filterMovie, filterYear, handleSelectFil
 
     return (
 
-        <form>
+        <div>
+            <h2 className="form__instructions">Busca una película con el nombre exacto en inglés y déjate sorprender por todas las veces que Owen Wilson dice WOW</h2>
 
+            <form className="form">
 
-            {/*Filtro por nombre de película*/}
-            <input
-                className="form__search"
-                autoComplete="off"
-                type="search"
-                name="search"
-                placeholder="Filtrar por película"
-                onInput={handleInputFilterMovie}
-                value={filterMovie}
-            />
+                <div className="form__filters">
 
-            {/*Filtro por año*/}
+                    {/*Filtro por nombre de película*/}
+                    <input
+                        className="form__input"
+                        autoComplete="off"
+                        type="search"
+                        name="search"
+                        placeholder="Filtrar por película"
+                        onInput={handleInputFilterMovie}
+                        value={filterMovie}
+                    />
 
-            <select className="form__search" name="searchYear" value={filterYear} onChange={handleSelectFilterYear}>
-                <option value="">Filtrar por año</option>
-                {finalYear.map((year) => (
-                    <option key={year} value={year}>
-                        {year}
-                    </option>
-                ))}
-            </select>
+                    {/*Filtro por año*/}
 
-        </form>
+                    <select className="form__year" name="searchYear" value={filterYear} onChange={handleSelectFilterYear}>
+                        <option value="">Filtrar por año</option>
+                        {finalYear.map((year) => (
+                            <option key={year} value={year}>
+                                {year}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+            </form>
+        </div>
     );
-
 }
 
 Form.propTypes = {

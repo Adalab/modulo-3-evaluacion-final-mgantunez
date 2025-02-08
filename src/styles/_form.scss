@@ -1,17 +1,43 @@
-form {
+.form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     margin-top: 3rem;
 
-    &__search {
+    &__instructions {
+        text-align: center;
+        color: #2c3e50;
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+        font-weight: 100;
+    }
+
+    &__filters {
+        display: flex;
+        justify-content: center;
+        gap: 10rem;
+    }
+
+    &__input {
         padding: 1rem 2rem;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         border: 2px solid #ccc;
         border-radius: 5px;
         outline: none;
         width: 500px;
+        background-color: #fff;
+        transition: all 0.3s ease;
+    }
+
+    &__year {
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        width: 300px;
         background-color: #fff;
         transition: all 0.3s ease;
 
