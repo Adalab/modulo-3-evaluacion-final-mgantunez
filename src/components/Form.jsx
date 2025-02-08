@@ -30,11 +30,13 @@ function Form({ handleInputFilterMovie, filterMovie, filterYear, handleSelectFil
 
                     <select className="form__year" name="searchYear" value={filterYear} onChange={handleSelectFilterYear}>
                         <option value="">Filtrar por año</option>
-                        {finalYear.map((year) => (
-                            <option key={year} value={year}>
-                                {year}
-                            </option>
-                        ))}
+                        {finalYear
+                            .sort((a, b) => a - b)
+                            .map((year) => (
+                                <option key={year} value={year}>
+                                    {year}
+                                </option>
+                            ))}
                     </select>
                 </div>
             </form>
