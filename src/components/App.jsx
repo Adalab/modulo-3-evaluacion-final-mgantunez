@@ -11,6 +11,7 @@ import '../styles/_footer.scss';
 function App() {
 
   const [movies, setMovies] = useState([]);
+  const [filterMovie, setFilterMovie] = useState('');
 
   useEffect(() => {
     fetch('https://owen-wilson-wow-api.onrender.com/wows/random?results=50')
@@ -20,6 +21,13 @@ function App() {
       });
   }, []);
 
+  const handleInputFilterMovie = (ev) => {
+    ev.preventDefault();
+    setFilterMovie(ev.target.value);
+
+  }
+
+  const filteredMovies = movies.filter(movie => movie.movie.toLowerCase().includes(filterMovie.toLocaleLowerCase()));
 
 
   return (
@@ -32,13 +40,13 @@ function App() {
 
       <main>
 
-        <Form />
+        <Form handleInputFilterMovie={handleInputFilterMovie} filterMovie={filterMovie} />
 
         {movies.length === 0
           ?
-          <p>No hay resultados</p>
+          (<p>No hay resultados</p>)
           :
-          <MoviesList movies={movies} />
+          (<MoviesList movies={filteredMovies} />)
         }
 
       </main>

@@ -1,4 +1,6 @@
-function Form() {
+import PropTypes from 'prop-types';
+
+function Form({ handleInputFilterMovie, filterMovie }) {
 
     return (
         <form>
@@ -9,7 +11,8 @@ function Form() {
                 type="search"
                 name="search"
                 placeholder="Filtrar por película"
-                value=""
+                onInput={handleInputFilterMovie}
+                value={filterMovie}
             />
 
             <select className="form__search" name="searchYear">
@@ -24,5 +27,10 @@ function Form() {
     );
 
 }
+
+Form.propTypes = {
+    handleInputFilterMovie: PropTypes.func.isRequired,
+    filterMovie: PropTypes.string.isRequired,
+};
 
 export default Form;

@@ -8,7 +8,7 @@ function MoviesList({ movies }) {
 
             {movies.map((oneMovie) =>
 
-                <li key={oneMovie.timestamp + oneMovie.full_line} className="movies__item">
+                <li key={oneMovie.audio} className="movies__item">
 
                     <MoviesItem oneMovie={oneMovie} />
 
