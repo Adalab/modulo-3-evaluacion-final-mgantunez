@@ -1,10 +1,18 @@
+import { useState } from 'react';
+import MoviesList from './movies_list/MoviesList';
+
 import '../styles/App.scss';
 import '../styles/_header.scss';
 import '../styles/_movies_list.scss';
 import '../styles/_form.scss';
-import { useState } from 'react';
+
+import dataJson from '../data/movies.json';
+
 
 function App() {
+
+  const [movies, setMovies] = useState(dataJson);
+
   return (
     <div className="page">
 
@@ -36,36 +44,7 @@ function App() {
 
         </form>
 
-        <ul className="movies__list">
-
-          <li className="movies__item">
-
-            <img className="movies__img" src="#" alt="poster" />
-            <p className="movies__title">Película</p>
-            <p className="movies__sentence">Frase completa</p>
-            <p className="movies__year">Año</p>
-
-          </li>
-
-          <li className="movies__item">
-
-            <img className="movies__img" src="#" alt="poster" />
-            <p className="movies__title">Película</p>
-            <p className="movies__sentence">Frase completa</p>
-            <p className="movies__year">Año</p>
-
-          </li>
-
-          <li className="movies__item">
-
-            <img className="movies__img" src="#" alt="poster" />
-            <p className="movies__title">Película</p>
-            <p className="movies__sentence">Frase completa</p>
-            <p className="movies__year">Año</p>
-
-          </li>
-
-        </ul>
+        <MoviesList movies={movies} />
 
       </main>
     </div>
