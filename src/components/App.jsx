@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import MoviesList from './movies_list/MoviesList';
 
 import '../styles/App.scss';
@@ -7,12 +7,19 @@ import '../styles/_movies_list.scss';
 import '../styles/_form.scss';
 import '../styles/_footer.scss';
 
-import dataJson from '../data/movies.json';
-
-
 function App() {
 
-  const [movies, setMovies] = useState(dataJson);
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch('https://owen-wilson-wow-api.onrender.com/wows/random?results=50')
+      .then(response => response.json())
+      .then(dataJson => {
+        setMovies(dataJson);
+      });
+  }, []);
+
+
 
   return (
     <div className="page">
@@ -45,7 +52,12 @@ function App() {
 
         </form>
 
-        <MoviesList movies={movies} />
+        {movies.length === 0
+          ?
+          <p>No hay resultados</p>
+          :
+          <MoviesList movies={movies} />
+        }
 
       </main>
 
