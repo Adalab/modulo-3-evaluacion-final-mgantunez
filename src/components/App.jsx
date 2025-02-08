@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from './Header';
 import MovieSceneList from './movies_list/MovieSceneList';
 import Form from './Form';
+import Footer from './Footer';
 
 import '../styles/App.scss';
 import '../styles/_header.scss';
@@ -75,11 +76,8 @@ function App() {
 
       </main>
 
-      <footer className="footer">
+      <Footer />
 
-        <p className="footer__text">&copy; 2025 The Owen Wilson WOW web. Todos los derechos reservados.</p>
-
-      </footer>
     </div>
   )
 }
