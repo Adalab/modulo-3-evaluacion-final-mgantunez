@@ -9,6 +9,9 @@ import '../styles/_header.scss';
 import '../styles/_movies_list.scss';
 import '../styles/_form.scss';
 import '../styles/_footer.scss';
+import { Route } from 'react-router';
+import LandingPage from './pages/LandingPage';
+import MovieSceneDetail from './pages/MovieSceneDetail';
 
 function App() {
 
@@ -68,6 +71,12 @@ function App() {
       <Header />
 
       <main>
+
+        <Routes>
+          <Route index element={<LandingPage />}></Route>
+          <Route path="detail/:name" element={<MovieSceneDetail />}></Route>
+          <Route path="*" element={<p>Error 404</p>}></Route>
+        </Routes>
 
         <Form
           handleInputFilterMovie={handleInputFilterMovie}
