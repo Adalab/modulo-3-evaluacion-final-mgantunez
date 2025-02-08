@@ -8,6 +8,7 @@ import '../styles/_header.scss';
 import '../styles/_form.scss';
 import '../styles/_movies_list.scss';
 import '../styles/_footer.scss';
+import '../styles/_movie_scene_detail.scss';
 import LandingPage from './pages/LandingPage';
 import MovieSceneDetail from './pages/MovieSceneDetail';
 import { Route, Routes } from 'react-router';
