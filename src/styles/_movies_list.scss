@@ -1,5 +1,19 @@
 .movies {
 
+    &__textNotFound {
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    &__imgNotFound {
+        display: block;
+        margin: 0 auto;
+        padding-top: 25px;
+        max-width: 100%;
+        height: auto;
+    }
+
     &__list {
         display: flex;
         flex-wrap: wrap;

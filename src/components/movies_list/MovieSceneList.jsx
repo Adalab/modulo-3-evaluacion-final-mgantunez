@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import MovieSceneItem from './MovieSceneItem';
+import notFoundImage from '../../images/notFound.jpeg';
 
 function MovieSceneList({ movies, filterMovie }) {
 
@@ -17,9 +18,12 @@ function MovieSceneList({ movies, filterMovie }) {
                 ?
 
                 (
-                    <p className="movies__notFound">
-                        No hay ninguna película que coincida con la palabra {filterMovie}
-                    </p>
+                    <>
+                        <p className="movies__textNotFound">
+                            No hay ninguna película que coincida con la palabra {filterMovie}
+                        </p>
+                        <img className="movies__imgNotFound" src={notFoundImage} alt="Imagen de película no encontrada" />
+                    </>
                 )
 
                 :
