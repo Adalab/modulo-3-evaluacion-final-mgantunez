@@ -14,7 +14,7 @@ function MovieSceneItem({ oneMovie }) {
                 <p className="movies__year">{oneMovie.year}</p>
 
                 <button className="movies__infoBtn">
-                    <i className="fas fa-info-circle"></i>
+                    <i className="movies__icon fas fa-info-circle"></i>
                     Ver detalles
                 </button>
 
