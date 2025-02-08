@@ -43,19 +43,18 @@
     &__introText {
         font-size: 1.8rem;
         color: #333;
-        font-weight: 500;
         font-weight: bold;
+        margin-bottom: -30px;
     }
 
     &__text {
         font-size: 1.6rem;
         color: #333;
-        line-height: 1.5;
     }
 
     &__audio {
         width: 100%;
-        margin-top: 50px;
+        margin-top: 40px;
         max-width: 500px;
     }
 

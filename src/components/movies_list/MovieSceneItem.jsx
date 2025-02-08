@@ -6,7 +6,7 @@ function MovieSceneItem({ oneMovie }) {
 
     return (
 
-        <Link to={"detail/" + oneMovie.movie}>
+        <Link to={"detail/" + oneMovie.movie} className="movies__link">
             <>
                 <img className="movies__img" src={oneMovie.poster} alt={`Cartel de ${oneMovie.movie}`} />
                 <p className="movies__title">{oneMovie.movie}</p>
