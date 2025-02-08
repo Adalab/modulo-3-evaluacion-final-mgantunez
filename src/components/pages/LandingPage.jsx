@@ -2,20 +2,21 @@ import PropTypes from 'prop-types';
 
 import MovieSceneList from "../movies_list/MovieSceneList";
 
-function LandingPage({ movies }) {
+function LandingPage({ movies, filterMovie }) {
     return (
         <>
 
-            {movies.length === 0
-                ?
-                (<p>No hay resultados</p>)
-                :
-                (<MovieSceneList movies={movies} />)
-            }
+
+            <MovieSceneList movies={movies} filterMovie={filterMovie} />
 
         </>
     );
 
 }
+
+LandingPage.propTypes = {
+    movies: PropTypes.array.isRequired,
+    filterMovie: PropTypes.string.isRequired
+};
 
 export default LandingPage;

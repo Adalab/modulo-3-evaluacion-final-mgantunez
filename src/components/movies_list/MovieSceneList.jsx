@@ -1,28 +1,45 @@
 import PropTypes from 'prop-types';
 import MovieSceneItem from './MovieSceneItem';
 
-function MovieSceneList({ movies }) {
+function MovieSceneList({ movies, filterMovie }) {
+
+    const filteredMovies = movies.filter((oneMovie) =>
+        oneMovie.movie.toLowerCase().includes(filterMovie.toLowerCase())
+    );
+
     return (
+        <section className="movies">
 
-        <ul className="movies__list">
+            {/* Si no hay películas que coincidan con el filtro */}
 
-            {movies.map((oneMovie) =>
+            {filteredMovies.length === 0
 
-                <li key={oneMovie.audio} className="movies__item">
+                ?
 
-                    <MovieSceneItem oneMovie={oneMovie} />
+                (
+                    <p className="movies__notFound">
+                        No hay ninguna película que coincida con la palabra {filterMovie}
+                    </p>
+                )
 
-                </li>
+                :
 
-            )}
-
-        </ul>)
-        ;
-
+                (
+                    <ul className="movies__list">
+                        {filteredMovies.map((oneMovie) => (
+                            <li key={oneMovie.audio} className="movies__item">
+                                <MovieSceneItem oneMovie={oneMovie} />
+                            </li>
+                        ))}
+                    </ul>
+                )}
+        </section>
+    );
 }
 
 MovieSceneList.propTypes = {
-    movies: PropTypes.array
-}
+    movies: PropTypes.array.isRequired,
+    filterMovie: PropTypes.string.isRequired
+};
 
 export default MovieSceneList;

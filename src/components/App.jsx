@@ -92,7 +92,7 @@ function App() {
         )}
 
         <Routes>
-          <Route index element={<LandingPage movies={filteredMovies} />}></Route>
+          <Route index element={<LandingPage movies={filteredMovies} filterMovie={filterMovie} />}></Route>
           <Route path="detail/:movie" element={<MovieSceneDetail findMovie={findMovie} />}></Route>
           <Route path="*" element={<p>Error 404 - Página no encontrada</p>}></Route>
         </Routes>
