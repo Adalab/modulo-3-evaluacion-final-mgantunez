@@ -12,6 +12,7 @@ function App() {
 
   const [movies, setMovies] = useState([]);
   const [filterMovie, setFilterMovie] = useState('');
+  const [filterYear, setFilterYear] = useState('');
 
   useEffect(() => {
     fetch('https://owen-wilson-wow-api.onrender.com/wows/random?results=50')
@@ -21,14 +22,32 @@ function App() {
       });
   }, []);
 
+
+  // Filtro por nombre
+
   const handleInputFilterMovie = (ev) => {
     ev.preventDefault();
     setFilterMovie(ev.target.value);
 
   }
 
-  const filteredMovies = movies.filter(movie => movie.movie.toLowerCase().includes(filterMovie.toLocaleLowerCase()));
+  // Filtro por año
 
+  const handleSelectFilterYear = (ev) => {
+    setFilterYear(ev.target.value);
+  };
+
+  // Filtro por nombre y año
+
+  const filteredMovies = movies.filter(movie => {
+
+    const searchMovie = movie.movie.toLowerCase().includes(filterMovie.toLocaleLowerCase());
+    const searchYear = filterYear ? movie.year === parseInt(filterYear) : true;
+    return searchMovie && searchYear;
+  });
+
+  // Obtener año de película con .map 
+  const finalYear = [...new Set(movies.map(movie => movie.year))];
 
   return (
     <div className="page">
@@ -40,7 +59,14 @@ function App() {
 
       <main>
 
-        <Form handleInputFilterMovie={handleInputFilterMovie} filterMovie={filterMovie} />
+        <Form
+          handleInputFilterMovie={handleInputFilterMovie}
+          filterMovie={filterMovie}
+          filterYear={filterYear}
+          handleSelectFilterYear={handleSelectFilterYear}
+          finalYear={finalYear}
+
+        />
 
         {movies.length === 0
           ?
