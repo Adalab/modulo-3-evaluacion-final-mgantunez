@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Header from './Header';
-import MovieSceneList from './movies_list/MovieSceneList';
 import Form from './Form';
 import Footer from './Footer';
 
@@ -9,9 +8,9 @@ import '../styles/_header.scss';
 import '../styles/_movies_list.scss';
 import '../styles/_form.scss';
 import '../styles/_footer.scss';
-import { Route } from 'react-router';
 import LandingPage from './pages/LandingPage';
 import MovieSceneDetail from './pages/MovieSceneDetail';
+import { Route, Routes } from 'react-router';
 
 function App() {
 
@@ -65,18 +64,18 @@ function App() {
   // Obtener año de película con .map 
   const finalYear = [...new Set(movies.map(movie => movie.year))];
 
+
+  // Función para usar en router
+  const findMovie = (movieName) => {
+    return movies.find((movie) => movie.movie.toLowerCase() === movieName.toLowerCase());
+  }
+
   return (
     <div className="page">
 
       <Header />
 
       <main>
-
-        <Routes>
-          <Route index element={<LandingPage />}></Route>
-          <Route path="detail/:name" element={<MovieSceneDetail />}></Route>
-          <Route path="*" element={<p>Error 404</p>}></Route>
-        </Routes>
 
         <Form
           handleInputFilterMovie={handleInputFilterMovie}
@@ -87,12 +86,11 @@ function App() {
 
         />
 
-        {movies.length === 0
-          ?
-          (<p>No hay resultados</p>)
-          :
-          (<MovieSceneList movies={filteredMovies} />)
-        }
+        <Routes>
+          <Route index element={<LandingPage movies={filteredMovies} />}></Route>
+          <Route path="detail/:movie" element={<MovieSceneDetail findMovie={findMovie} />}></Route>
+          <Route path="*" element={<p>Error 404 - Página no encontrada</p>}></Route>
+        </Routes>
 
       </main>
 
