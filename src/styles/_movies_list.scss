@@ -38,6 +38,7 @@
         justify-content: space-between;
         padding: 1rem;
         height: 600px;
+        position: relative;
 
         &:hover {
             transform: translateY(-5px);
@@ -75,4 +76,32 @@
         color: #7f8c8d;
         text-align: center;
     }
+
+    &__infoBtn {
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        color: #3498db;
+        cursor: pointer;
+        position: absolute;
+
+        top: 20px;
+        right: 20px;
+        padding: 5px 10px;
+        border-radius: 5px;
+
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    &__infoBtn:hover {
+        color: #2980b9;
+    }
+
+    .fas.fa-info-circle {
+        font-size: 1.8rem;
+    }
+
 }

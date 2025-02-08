@@ -13,6 +13,11 @@ function MovieSceneItem({ oneMovie }) {
                 <p className="movies__sentence">{oneMovie.full_line}</p>
                 <p className="movies__year">{oneMovie.year}</p>
 
+                <button className="movies__infoBtn">
+                    <i className="fas fa-info-circle"></i>
+                    Ver detalles
+                </button>
+
             </>
 
         </Link>
