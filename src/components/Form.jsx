@@ -2,12 +2,16 @@ import PropTypes from 'prop-types';
 
 function Form({ handleInputFilterMovie, filterMovie, filterYear, handleSelectFilterYear, finalYear }) {
 
+    const handleSubmit = (event) => {
+        event.preventDefault(); // Evita que el formulario se envíe y recargue la página
+    };
+
     return (
 
         <div>
             <h2 className="form__instructions">Busca una película con el nombre exacto en inglés y déjate sorprender por todas las veces que Owen Wilson dice WOW</h2>
 
-            <form className="form">
+            <form className="form" onSubmit={handleSubmit}>
 
                 <div className="form__filters">
 
