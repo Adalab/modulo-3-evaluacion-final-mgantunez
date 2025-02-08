@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import MoviesItem from './MoviesItem';
+import MovieSceneItem from './MovieSceneItem';
 
-function MoviesList({ movies }) {
+function MovieSceneList({ movies }) {
     return (
 
         <ul className="movies__list">
@@ -10,7 +10,7 @@ function MoviesList({ movies }) {
 
                 <li key={oneMovie.audio} className="movies__item">
 
-                    <MoviesItem oneMovie={oneMovie} />
+                    <MovieSceneItem oneMovie={oneMovie} />
 
                 </li>
 
@@ -21,8 +21,8 @@ function MoviesList({ movies }) {
 
 }
 
-MoviesList.propTypes = {
+MovieSceneList.propTypes = {
     movies: PropTypes.array
 }
 
-export default MoviesList;
+export default MovieSceneList;

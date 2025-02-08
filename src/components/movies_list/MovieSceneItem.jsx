@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function MoviesItem({ oneMovie }) {
+function MovieSceneItem({ oneMovie }) {
 
 
     return (
@@ -17,8 +17,8 @@ function MoviesItem({ oneMovie }) {
 
 }
 
-MoviesItem.propTypes = {
+MovieSceneItem.propTypes = {
     oneMovie: PropTypes.object
 }
 
-export default MoviesItem;
+export default MovieSceneItem;

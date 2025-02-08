@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import MoviesList from './movies_list/MoviesList';
+import MovieSceneList from './movies_list/MovieSceneList';
 import Form from './Form';
 
 import '../styles/App.scss';
@@ -46,7 +46,7 @@ function App() {
           ?
           (<p>No hay resultados</p>)
           :
-          (<MoviesList movies={filteredMovies} />)
+          (<MovieSceneList movies={filteredMovies} />)
         }
 
       </main>
