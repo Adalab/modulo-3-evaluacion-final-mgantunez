@@ -25,7 +25,12 @@ function MovieSceneItem({ oneMovie }) {
 }
 
 MovieSceneItem.propTypes = {
-    oneMovie: PropTypes.object
+    oneMovie: PropTypes.shape({
+        movie: PropTypes.string.isRequired,
+        poster: PropTypes.string.isRequired,
+        full_line: PropTypes.string.isRequired,
+        year: PropTypes.string.isRequired,
+    }).isRequired,
 }
 
 export default MovieSceneItem;

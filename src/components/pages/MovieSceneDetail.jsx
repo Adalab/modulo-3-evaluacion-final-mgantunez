@@ -1,6 +1,6 @@
-
-
 import { useParams, Link } from 'react-router';
+
+import PropTypes from 'prop-types';
 
 function MovieSceneDetail({ findMovie }) {
 
@@ -46,6 +46,10 @@ function MovieSceneDetail({ findMovie }) {
         </section >
     );
 
+}
+
+MovieSceneDetail.propTypes = {
+    findMovie: PropTypes.object
 }
 
 export default MovieSceneDetail;
