@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Header from './Header';
 import MovieSceneList from './movies_list/MovieSceneList';
 import Form from './Form';
 
@@ -52,10 +53,7 @@ function App() {
   return (
     <div className="page">
 
-      <header className="header">
-        <img className="header__image" src="/portada_header.png" alt="Owen Wilson WOW" />
-        <h1 className="header__title">The Owen Wilson WOW web</h1>
-      </header>
+      <Header />
 
       <main>
 
