@@ -8,6 +8,9 @@ function MovieSceneList({ movies, filterMovie }) {
         oneMovie.movie.toLowerCase().includes(filterMovie.toLowerCase())
     );
 
+    // Ordenar las películas filtradas alfabéticamente por el nombre de la película
+    const sortedMovies = filteredMovies.sort((a, b) => a.movie.localeCompare(b.movie));
+
     return (
         <section className="movies">
 
@@ -30,7 +33,7 @@ function MovieSceneList({ movies, filterMovie }) {
 
                 (
                     <ul className="movies__list">
-                        {filteredMovies.map((oneMovie) => (
+                        {sortedMovies.map((oneMovie) => (
                             <li key={oneMovie.audio} className="movies__item">
                                 <MovieSceneItem oneMovie={oneMovie} />
                             </li>
