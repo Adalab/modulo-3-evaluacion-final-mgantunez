@@ -1,5 +1,6 @@
 import '../styles/App.scss';
 import '../styles/_header.scss';
+import '../styles/_movies_list.scss';
 import { useState } from 'react';
 
 function App() {
@@ -38,28 +39,28 @@ function App() {
 
           <li className="movies__item">
 
-            <img src="#" alt="poster" />
-            <p>Película</p>
-            <p>Frase completa</p>
-            <p>Año</p>
+            <img className="movies__img" src="#" alt="poster" />
+            <p className="movies__title">Película</p>
+            <p className="movies__sentence">Frase completa</p>
+            <p className="movies__year">Año</p>
 
           </li>
 
           <li className="movies__item">
 
-            <img src="#" alt="poster" />
-            <p>Película</p>
-            <p>Frase completa</p>
-            <p>Año</p>
+            <img className="movies__img" src="#" alt="poster" />
+            <p className="movies__title">Película</p>
+            <p className="movies__sentence">Frase completa</p>
+            <p className="movies__year">Año</p>
 
           </li>
 
           <li className="movies__item">
 
-            <img src="#" alt="poster" />
-            <p>Película</p>
-            <p>Frase completa</p>
-            <p>Año</p>
+            <img className="movies__img" src="#" alt="poster" />
+            <p className="movies__title">Película</p>
+            <p className="movies__sentence">Frase completa</p>
+            <p className="movies__year">Año</p>
 
           </li>
 
