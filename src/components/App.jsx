@@ -5,6 +5,7 @@ import '../styles/App.scss';
 import '../styles/_header.scss';
 import '../styles/_movies_list.scss';
 import '../styles/_form.scss';
+import '../styles/_footer.scss';
 
 import dataJson from '../data/movies.json';
 
@@ -47,6 +48,12 @@ function App() {
         <MoviesList movies={movies} />
 
       </main>
+
+      <footer className="footer">
+
+        <p className="footer__text">&copy; 2025 The Owen Wilson WOW web. Todos los derechos reservados.</p>
+
+      </footer>
     </div>
   )
 }
