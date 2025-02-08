@@ -24,11 +24,20 @@ function MovieSceneDetail({ findMovie }) {
 
                 <div className="detail__info">
 
-                    <p className="detail__introText">Frase:</p>
-                    <p className="detail__text"> {movie.full_line}</p>
-                    <p className="detail__introText">Director:</p>
-                    <p className="detail__text">{movie.director}</p>
+                    <div>
+                        <i className="detail__icon fas fa-quote-left"></i>
+                        <p className="detail__introText">Frase:</p>
+                        <p className="detail__text">{movie.full_line}</p>
+                    </div>
 
+                    <div className="detail__infoLine">
+                        <i className="detail__icon fas fa-user"></i>
+                        <p className="detail__introText">Director:</p>
+                        <p className="detail__text">{movie.director}</p>
+
+                    </div>
+
+                    <i className="detail__icon fas fa-volume-up"></i>
 
                     <audio controls className="detail__audio">
 
