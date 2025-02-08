@@ -2,8 +2,9 @@ import '../styles/App.scss';
 
 function App() {
   return (
-    <div>
-      Escribe aquí tu HTML...
+    <div className="page">
+      <header className="header"></header>
+      <h1 className="header__title">The Owen Wilson WOW web</h1>
     </div>
   )
 }
