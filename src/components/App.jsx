@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router';
 import Header from './Header';
 import Form from './Form';
 import Footer from './Footer';
@@ -95,7 +96,13 @@ function App() {
         <Routes>
           <Route index element={<LandingPage movies={filteredMovies} filterMovie={filterMovie} />}></Route>
           <Route path="detail/:movie" element={<MovieSceneDetail findMovie={findMovie} />}></Route>
-          <Route path="*" element={<p>Error 404 - Página no encontrada</p>}></Route>
+          <Route path="*" element={
+            <div className="detail"><p className="detail__title">Error 404 - Página no encontrada</p>
+              <Link to="/" className="detail__returnBtn">
+                Volver a la home
+              </Link>
+            </div>
+          }></Route>
         </Routes>
 
       </main>

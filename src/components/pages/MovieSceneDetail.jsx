@@ -14,7 +14,13 @@ function MovieSceneDetail({ findMovie }) {
     }
 
     if (!movie) {
-        return <p>Película no encontrada</p>;
+        return (
+            <section className="detail">
+                <h2 className="detail__title">La escena que buscas no existe</h2>
+                <Link to="/" className="detail__returnBtn">
+                    Volver a la home
+                </Link>
+            </section>);
     }
 
     return (
