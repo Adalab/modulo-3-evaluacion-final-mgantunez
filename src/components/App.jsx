@@ -36,6 +36,7 @@ function App() {
       .then(response => response.json())
       .then(dataJson => {
         setMovies(dataJson);
+        localStorage.setItem("movies", JSON.stringify(dataJson));
       });
   },
     [filterMovie, filterYear]);

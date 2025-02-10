@@ -6,7 +6,12 @@ function MovieSceneDetail({ findMovie }) {
 
     const params = useParams();
 
-    const movie = findMovie(params.movie);
+    let movie = findMovie(params.movie);
+
+    if (!movie) {
+        const storedMovies = JSON.parse(localStorage.getItem("movies")) || [];
+        movie = storedMovies.find(m => m.movie === params.movie);
+    }
 
     if (!movie) {
         return <p>Película no encontrada</p>;
