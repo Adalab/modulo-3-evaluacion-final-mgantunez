@@ -1,1 +1,7 @@
 @use 'core/reset';
+
+@use '../styles/_header.scss';
+@use '../styles/_form.scss';
+@use '../styles/_movies_list.scss';
+@use '../styles/_footer.scss';
+@use '../styles/_movie_scene_detail.scss';
